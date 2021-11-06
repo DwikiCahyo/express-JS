@@ -5,7 +5,7 @@ const port = 3000
 
 
 //routing
-app.get('/', (req, res) => { //Halaman Root
+app.get('/', (req, res,err) => { //Halaman Root
   res.send('Hello World!')
 })
 
@@ -18,6 +18,11 @@ app.get('/halaman1', (req, res) => { //Halaman 1
 
     })
   })
+
+  app.get('/halaman3/:id', (req, res) => {
+    res.send('Halaman 3 memiliki id ' + req.query.category);
+    
+  });
 
  app.get('/halaman2', (req, res) => { //Halaman 2
      res.send('Halaman2')
